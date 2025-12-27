@@ -4,10 +4,10 @@ public class Binomial {
 		//// Uncomment the version of binomial that you want to test
  
 		// Testing the basic binomial implementation:
-    	// System.out.println(binomial1(Integer.parseInt(args[0]), Integer.parseInt(args[1])));
+    	 System.out.println(binomial1(Integer.parseInt(args[0]), Integer.parseInt(args[1])));
 
 		// Testing the optimized binomial implementation:
-		// System.out.println(binomial(Integer.parseInt(args[0]), Integer.parseInt(args[1])));
+		 System.out.println(binomial(Integer.parseInt(args[0]), Integer.parseInt(args[1])));
 	}
 
 	// Computes the Binomial function, basic version.
@@ -18,8 +18,8 @@ public class Binomial {
 	}
 	
 	// Computes the Binomial function, efficiently
-	public static int binomial(int n, int k) {
-		int[][] memo = new int[n + 1][k + 1];
+	public static long binomial(int n, int k) {
+		long[][] memo = new long[n + 1][k + 1];
         for (int i = 0; i <= n; i++) {
             for (int j = 0; j <= k; j++) {
                 memo[i][j] = -1;
@@ -28,7 +28,7 @@ public class Binomial {
         return binomial(n, k, memo);
 	}
 
-	private static int binomial(int n, int k, int[][] memo) {
+	private static long binomial(int n, int k, long[][] memo) {
 		if (memo[n][k] != -1) {
 			return memo[n][k];
 		}
